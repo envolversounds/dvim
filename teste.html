@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando API do YouTube com um iframe existente</title>
+</head>
+<body>
+
+    <!-- Seu iframe precisa ter um ID -->
+    <iframe id="meuVideo" width="560" height="315" src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1"frameborder="0" allowfullscreen></iframe>
+
+    <button onclick="player.playVideo()">▶️ Play</button>
+    <button onclick="player.pauseVideo()">⏸ Pause</button>
+    <button onclick="player.stopVideo()">⏹ Stop</button>
+
+    <script>
+        // Carrega a API do YouTube de forma assíncrona
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('meuVideo', {  // Pegando o iframe existente
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            console.log("Player está pronto!");
+        }
+    </script>
+
+</body>
+</html>
