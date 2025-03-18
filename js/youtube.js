@@ -23,6 +23,7 @@ function onPlayerReady(event) {
 
 // Funções para controlar o vídeo
 var film = document.getElementById("film");
+var playButton = document.getElementById("playButton");
 
 film.addEventListener("click",function(){
     //Checa se o vídeo está tocando, 1 = Tocando
@@ -35,6 +36,9 @@ film.addEventListener("click",function(){
         for (var i = 0; i < keep_watching.length; i++) {
             keep_watching[i].style.display = "block";
         }
+
+        //Mostra o botão play
+        playButton.style.display = "block";
     }else{ // Pausado
         //Remove o texto "CONTINUAR ASSISTINDO"
         var keep_watching = document.getElementsByClassName("keep-watching");
@@ -51,10 +55,23 @@ film.addEventListener("click",function(){
             }
         });
 
+        //Remove o botão play e a imagem de fundo
+        playButton.style.display = "none";
+        film.style.backgroundImage = "none";
+
         //Toca o vídeo
         player.playVideo();
     }
 });
+
+film.addEventListener("mouseover",function(){
+    playButton.style.animation = "grow 0.1s linear forwards";
+});
+
+film.addEventListener("mouseout",function(){
+    playButton.style.animation = "shrink 0.1s linear forwards"; 
+});
+
 
 function stopVideo() {
     player.stopVideo();

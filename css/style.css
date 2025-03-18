@@ -1,7 +1,9 @@
 :root{
-    --text-video-size: 25px;
+    --text-video-size: clamp(14px, 2.5vw, 25px);
     --text-video-weight: 600;
     --text-video-color: #fff;
+    --text-video-x-position: 50%;
+    --text-video-y-position: 20%;
 }
 
 iframe{
@@ -45,66 +47,92 @@ iframe{
     color: #fff;
 }
 
-.video{
-    border-radius: 20px;
-    box-shadow: 0px 0px 15px rgba(25, 0, 50, 0.744);
-}
-
 .purple{
     color: #4f0081;
+}
+
+#playButton{
+    position: absolute;
+    width: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@keyframes grow{
+    from{
+        width: 60px;
+    }to{
+        width: 80px;
+    }
+}
+
+@keyframes shrink{
+    from{
+        width: 80px;
+    }to{
+        width: 60px;
+    }
 }
 
 .keep-watching{
     display: none;
 }
 
+.video{
+    border-radius: 40px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
 #film{
     background-image: url("../images/Thumbnail\ VSL.png");
     background-repeat: no-repeat;
     background-size: cover;
-    
+    background-color: #00000000;
     width: 100%;
     max-width: 800px;
     aspect-ratio: 16 / 9;
+    border-radius: 40px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
     z-index: 1;
 }
 
 #cw1{
+    position: absolute;
     font-size: var(--text-video-size);
     font-weight: var(--text-video-weight);
     color: var(--text-video-color);
-    position: absolute;
-    top: 20%;
-    left: 50%;
+    top: var(--text-video-y-position);
+    left: var(--text-video-x-position);
     transform: translate(-50%); 
 }
 
 #cw2{
+    position: absolute;
     font-size: var(--text-video-size);
     font-weight: var(--text-video-weight);
     color: var(--text-video-color);
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
+    bottom: calc(var(--text-video-y-position) - 16px);
+    left: var(--text-video-x-position);
     transform: translate(-50%);
 }
 
 #kw1{
+    position: absolute;
     font-size: var(--text-video-size);
     font-weight: var(--text-video-weight);
     color: var(--text-video-color);
-    position: absolute;
-    top: 20%;
-    left: 50%;
+    top: var(--text-video-y-position);
+    left: var(--text-video-x-position);
     transform: translate(-50%); 
 }
 
 #kw2{
+    position: absolute;
     font-size: var(--text-video-size);
     font-weight: var(--text-video-weight);
     color: var(--text-video-color);
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translate(-50%);
+    bottom: var(--text-video-y-position);
+    left: var(--text-video-x-position);
+    transform: translate(-50%,50%);
 }
