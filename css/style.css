@@ -18,12 +18,9 @@ svg{
     image-rendering: pixelated;
 }
 
-:root{
-    --text-video-size: clamp(18px, 1.5vw, 24px);
-}
-
 body{
     background-color: #000000;
+    font-family: 'Montserrat-Regular';
 }
 
 #parallax{
@@ -110,6 +107,7 @@ body{
     background-clip: text;
     font-weight: bold;
     max-width: 1000px;
+    line-height: 1.3;
     word-spacing: 4px;
     animation: moveGradient 5s infinite linear;
 }
@@ -152,7 +150,8 @@ body{
 
 .subtitle{
     color: #545158;
-    font-size: 15px;
+    font-size: 15.4px;
+    line-height: 1.5;
 }
 
 .fw-700{
@@ -284,8 +283,7 @@ body{
 }
 
 #cw1{
-    font-family: sans-serif,Arial;
-    font-size: var(--text-video-size);
+    font-size: clamp(18px, 1.5vw, 24px);
     letter-spacing: 0.2px;
     color: #fff;
     transform: translateY(7px);
@@ -293,9 +291,7 @@ body{
 }
 
 #kw1{
-
-    font-family: sans-serif,Arial;
-    font-size: var(--text-video-size);
+    font-size: clamp(18px, 1.5vw, 24px);
     letter-spacing: 0.2px;
     color: #fff;
     transform: translateY(7px);
