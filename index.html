@@ -1,89 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>DVIM</title>
 </head>
 <body>
-    <header>
-        <!-- HEADLINE -->
-        <div class="container-fluid d-flex justify-content-center p-4" style="background-color: #1b0c3a; box-shadow: 0px 0px 10px #0f081e;">
-            <h1 class="text-center" style="color: #f7f7f7; max-width: 1000px; font-weight: bold;"><span style="color: rgb(255, 247, 0);">APROXIME-SE DA FAMA</span> ATRAVÉS DE VOCAIS PROFISSIONAIS COM TÉCNICAS DE PRODUTORES MUSICAIS RENOMADOS</span></h1>
-        </div>
-    </header>
+    <div class="container-fluid px-0" id="parallax">
+        <img src="images/homem-direito.png" id="homem-direito">
+        <img src="images/homem-esquerdo.png" id="homem-esquerdo">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg px-3 py-3 mb-4">
+            <div class="container-fluid">
+                <!-- Título -->
+                <a class="navbar-brand" href="#" id="navLogo">DVIM</a>
 
-    <section>
-        <!-- VSL -->
-        <div class="container flex-column mt-3">
-            <h4 class="pt-4 text-center p-2 subtitle">O QUE OS GRANDES PRODUTORES MUSICAIS USAM NAS VOZES DE GRANDES ESTRELAS DA MÚSICA? VEJA NO VÍDEO ABAIXO:</h4>
+                <!-- Ícone -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
+                    <span><img src="images/toggler.png"/></span>
+                </button>
 
-            
-            <div class="container-fluid my-4 p-0 d-flex justify-content-center position-relative">
-                <!-- Film -->
-                <div class="position-absolute" id="film">
-                    <p class="keep-watching" id="kw1">CONTINUAR ASSISTINDO</p>
-                    <p class="keep-watching" id="kw2">CONTINUAR ASSISTINDO</p>
-                    <p class="click-watch" id="cw1">CLIQUE PARA ASSISTIR</p>
-                    <p class="click-watch" id="cw2">CLIQUE PARA ASSISTIR</p>
-                    <img id="playButton" src="images/Play Button.png"/>
+                <!-- Nav -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">INÍCIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">MINHA HISTÓRIA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BENEFÍCIOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BÔNUS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Q&A</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex" role="search">
+                        <button id="navBtn">QUERO PARTICIPAR</button>
+                    </div>
                 </div>
-                <!-- YouTube Video -->
-                <iframe class="video" id="myPlayer" width="100%" style="max-width: 800px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/PhfIPwIIB-Q?&enablejsapi=1&controls=0&modestbranding=1&showinfo=0&playsinline=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            
-            <div class="container d-flex justify-content-center p-3">
+        </nav>
+
+        <!-- VSL -->
+        <div class="container-fluid d-flex justify-content-center align-items-center flex-column">
+            <!-- HEADLINE -->
+            <h1 class="text-center" id="headlineTxt">Aproxime-se da FAMA através de vocais PROFISSIONAIS com TÉCNICAS de produtores musicais RENOMADOS</span></h1>
+
+            <!-- Sub Headline -->
+            <div class="container flex-column">
+                <h4 class="pt-4 text-center p-2 subtitle text-light">O que os grandes produtores musicais usam nas vozes de grandes estrelas da música? Veja no vídeo abaixo:</h4>
+            </div>
+
+            <!-- VSL -->
+            <div class="container flex-column px-0">
+                <div class="container-fluid mb-4 p-0 d-flex justify-content-center position-relative" style="margin-top: 35px;">
+                    <!-- Film -->
+                    <div class="position-absolute d-flex justify-content-center align-items-center" id="film">
+                        <div class="d-flex justify-content-center align-items-center" style=" padding: 10px 20px;">
+                            <p class="keep-watching px-4" id="kw1">Continuar assistindo</p>
+                            <p class="click-watch px-4" id="cw1">Clique para assistir</p>
+                            <img id="playButton" src="images/play-button.png"/>
+                        </div>
+                    </div>
+                    <!-- YouTube Video -->
+                    <!-- <iframe class="video" id="myPlayer" width="100%" style="max-width: 800px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/PhfIPwIIB-Q?&enablejsapi=1&controls=0&modestbranding=1&showinfo=0&playsinline=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                    <iframe class="video" id="myPlayer" width="100%" style="max-width: 800px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/l591-ALtxlg?&enablejsapi=1&controls=0&modestbranding=1&showinfo=0&playsinline=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Botão -->
+            <div class="container d-flex justify-content-center pb-5 pt-4">
                 <button class="btn">QUERO VOCAIS PROFISSIONAIS</button>
             </div>
         </div>
+    </div>
 
-        <!-- A HISTÓRIA -->
-        <div class="container-fluid  p-4 mt-4" style="background-color: #0e003a;">
-            <div class="container d-flex justify-content-center flex-column">
-                <p class="txt1 p-2">Desde pequeno, sonhei em ser um cantor famoso, mas sem investimento, precisei aprender tudo sozinho. Na adolescência, comecei a estudar mixagem para gravar minhas próprias músicas, mas, apesar de todo o esforço, minha voz nunca soava como eu queria.</p>
-                <p class="txt1 p-2">Frustrado, decidi buscar a fundo o que estava errado. Em poucos meses, descobri um método que transformou meus vocais e reuni tudo isso em um passo a passo eficiente.</p>
-                <p class="txt1 p-2">O DVIM é um treinamento que te ensina a profissionalizar seus vocais com pouco investimento, usando apenas uma DAW e um afinador (Autotune ou Melodyne). Você aprenderá mixagem, teoria musical e técnicas para criar vocais de qualidade profissional, incluindo efeitos internacionais e harmonias. Mesmo sem experiência, você poderá alcançar resultados impressionantes!</p>
+    <!-- A HISTÓRIA -->
+    <div class="container-fluid  p-4">
+        <div class="container d-flex justify-content-center flex-column">
+            <p class="txt1 p-2">"Desde pequeno, sonhei em ser um cantor famoso, mas sem investimento, precisei aprender tudo sozinho. Na adolescência, comecei a estudar mixagem para gravar minhas próprias músicas, mas, apesar de todo o esforço, minha voz nunca soava como eu queria.</p>
+            <p class="txt1 p-2">Frustrado, decidi buscar a fundo o que estava errado. Em poucos meses, descobri um método que transformou meus vocais e reuni tudo isso em um passo a passo eficiente."</p>
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="textCard px-4">O DVIM é um treinamento que te ensina a profissionalizar seus vocais com pouco investimento, usando apenas uma DAW e um afinador (Autotune ou Melodyne).</div>
+                <div class="textCard px-4">Você aprenderá mixagem, teoria musical e técnicas para criar vocais de qualidade profissional, incluindo efeitos internacionais e harmonias. Mesmo sem experiência, você poderá alcançar resultados impressionantes!</div>
             </div>
         </div>
+    </div>
 
-            <div class="container d-flex align-items-center flex-column p-4">
-                <h1 class="title" style="color: rgb(76, 0, 147); margin: 20px 0px;">EXEMPLOS DE MÚSICAS</h1>
-                <!-- Música 01 -->
-                <div class="w-100" style="max-width: 600px; padding: 20px 0px;">
-                    <iframe class="video" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2055305688%3Fsecret_token%3Ds-OBRG0eSz8Rj&color=%235200cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <!-- PROVA -->
+    <div class="container d-flex align-items-center flex-column p-4">
+        <h1 class="title text-center" style="color: rgb(76, 0, 147); margin: 20px 0px;">EXEMPLOS DE MÚSICAS</h1>
+        <h4 class="subtitle pt-2">Músicas que eu criei utilizando as técnicas usadas no DVIM</h4>
+        <!-- Música 01 -->
+        <div class="w-100" style="max-width: 600px; padding: 20px 0px;">
+            <iframe class="video" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2055305688%3Fsecret_token%3Ds-OBRG0eSz8Rj&color=%235200cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        </div>
+        <!-- Música 02 -->
+        <div class="w-100" style="max-width: 600px; padding: 20px 0px;" >
+            <iframe class="video" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2055334296%3Fsecret_token%3Ds-0NKa3GVBWr1&color=%235200cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        </div>
+        <!-- Música 03 -->
+        <div class="w-100" style="max-width: 600px; padding: 20px 0px;" >
+            <iframe class="video" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2055341868%3Fsecret_token%3Ds-cD21i70Hv6K&color=%235200cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        </div>
+    </div>
+
+
+    <!-- GARANTIA -->
+
+    <div class="container-fluid  p-4" style="background-color: rgb(53, 0, 105);">
+        <div class="container d-flex justify-content-center align-items-center flex-column">
+            <img src="images/Garantia Sem Fundo.png" style="max-width: 300px;"/>
+            <h1 class="text-center light-purple" style="font-size: 40px; font-weight: 700; letter-spacing: 0.5px;">VOCÊ TEM 7 DIAS PARA PEDIR O SEU<br> DINHEIRO DE VOLTA</h1>
+        </div>
+    </div>
+
+    <!-- OFERTA -->
+    <div class="container-fluid d-flex justify-content-center align-items-center flex-column pt-5">
+        <h1 class="title purple text-center">2 BÔNUS EXCLUSIVOS</h1>
+        <h4 class="subtitle p-3">709,89</h4>
+        <img src="images/bonus.png" style="max-width: 100%; width: 800px;"/>
+        <h4 class="subtitle p-3">2 BÔNUS EXCLUSIVOS DE <s><strong>R$ 709,89</strong></s> POR R$ 0,00</h4>
+    </div>
+
+    <!-- Q&A -->
+        <div class="container-fluid bg-purple py-5">
+        <h1 class="title text-center pink pb-4">Q&A</h1>
+        <div class="container">
+            <!-- Accordion -->
+            <div class="accordion" id="accordionExample">
+                <!-- Accordion Item -->
+                <div class="accordion-item my-3 bg-purple" style="outline: none; box-shadow: none; border: none;">
+                    <!-- Botão -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="border-radius: 30px; box-shadow: 0px 4px 10px -5px #747077 !important;">
+                            ONDE EU RECEBO OS DADOS DE ACESSO APÓS A FINALIZAÇÃO DO PEDIDO?
+                        </button>
+                    </h2>
+                    <!-- Painel -->
+                    <div id="collapseOne" class="accordion-collapse collapse bg-light" style="margin: 0px 30px 0px 30px; border-radius: 0px 0px 10px 10px;">
+                        <div class="accordion-body">
+                            Você receberá os dados de acesso através do seu para a área de membros através do seu <strong>e-mail</strong>.
+                        </div>
+                    </div>
                 </div>
-                <!-- Música 02 -->
-                <div class="w-100" style="max-width: 600px; padding: 20px 0px;" >
-                    <iframe class="video" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2055334296%3Fsecret_token%3Ds-0NKa3GVBWr1&color=%235200cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <!-- Accordion Item -->
+                <div class="accordion-item my-3 bg-purple" style="outline: none; box-shadow: none; border: none;">
+                    <!-- Botão -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="border-radius: 30px; box-shadow: 0px 4px 10px -5px #747077 !important;">
+                            EU NÃO USO O ABLETON LIVE, POSSO FAZER O CURSO MESMO ASSIM?
+                        </button>
+                    </h2>
+                    <!-- Painel -->
+                    <div id="collapseTwo" class="accordion-collapse collapse bg-light" style="margin: 0px 30px 0px 30px; border-radius: 0px 0px 10px 10px;">
+                        <div class="accordion-body">
+                            <strong>Sim, você tanto pode como deve fazer o curso!</strong> Basta apenas pegar a essência do que eu vou falar para você e aplicar na sua própria DAW. Alguns recursos como o "Scale" do ableton podem estar disponíveis somente em algumas versões de sua DAW, cheque antes. Mesmo que a sua DAW não possua o recurso que eu mostrei no Ableton, ainda assim você pode fazer o curso, pois recursos podem ser substituídos, o conhecimento não.
+                        </div>
+                    </div>
                 </div>
-                <!-- Música 03 -->
-                <div class="w-100" style="max-width: 600px; padding: 20px 0px;" >
-                    <iframe class="video" width="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2055341868%3Fsecret_token%3Ds-cD21i70Hv6K&color=%235200cc&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                <!-- Accordion Item -->
+                <div class="accordion-item my-3 bg-purple" style="outline: none; box-shadow: none; border: none;">
+                    <!-- Botão -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="border-radius: 30px; box-shadow: 0px 4px 10px -5px #747077 !important;">
+                            PRECISO TER EQUIPAMENTOS CARÍSSIMOS PARA FAZER O CURSO?
+                        </button>
+                    </h2>
+                    <!-- Painel -->
+                    <div id="collapseThree" class="accordion-collapse collapse bg-light" style="margin: 0px 30px 0px 30px; border-radius: 0px 0px 10px 10px;">
+                        <div class="accordion-body">
+                            <strong>Não!</strong> Sabemos que nem todo mundo tem a capacidade de comprar equipamentos de qualidade excepcional, pois não tem nenhum tipo de investimento. No curso, eu recomendo você utilizar o melhor celular que você tem na sua casa, ou você pode começar a pesquisar microfones condensadores baratos como o bm800, mas tenha em mente que quanto melhor o seu microfone é, melhor será a qualidade do seu áudio. 
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-        <!-- GARANTIA -->
-
-        <div class="container-fluid  p-4" style="background-color: #4f0081;">
-            <div class="container d-flex justify-content-center align-items-center flex-column">
-                <img src="images/Garantia Sem Fundo.png" style="max-width: 300px;"/>
-                <h1 class="text-light text-center" style="font-size: 50px; font-weight: 700;">VOCÊ TEM 7 DIAS PARA PEDIR O SEU DINHEIRO DE VOLTA</h1>
-            </div>
+        </div>
         </div>
 
-        <!-- OFERTA -->
-        <div class="container-fluid d-flex justify-content-center align-items-center flex-column pt-5">
-            <h1 class="title purple">2 BÔNUS EXCLUSIVOS</h1>
-            <h4 class="subtitle pt-2">709,89</h4>
-            <img src="images/bonus.png" style="max-width: 800px;"/>
-            <h4 class="subtitle">2 BÔNUS EXCLUSIVOS DE <s><strong>R$ 709,89</strong></s> POR R$ 0,00</h4>
-        </div>
-    </section>
-
+    
     <script src="js/youtube.js"></script>
-    <script src="js/bootstrap.js"></script>
+    
 </body>
 </html>
