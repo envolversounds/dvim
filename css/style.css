@@ -13,6 +13,11 @@
     src: url("../fonts/Montserrat-Light.woff2") format('woff2');
 }
 
+svg{
+    shape-rendering: crispEdges;
+    image-rendering: pixelated;
+}
+
 :root{
     --text-video-size: clamp(18px, 1.5vw, 24px);
 }
@@ -61,8 +66,10 @@ body{
     font-family: 'Montserrat-Light';
     color: #fff;
     font-size: 25px;
+    width: 30px;
     /* letter-spacing: 1px; */
 }
+
 
 #navBtn{
     background: linear-gradient(to right, #5410a0, #bc36f7);
