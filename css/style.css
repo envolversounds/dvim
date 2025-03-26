@@ -13,6 +13,11 @@
     src: url("../fonts/Montserrat-Light.woff2") format('woff2');
 }
 
+@font-face {
+    font-family: 'Montserrat-Italic';
+    src: url("../fonts/Montserrat-Italic.woff2") format('woff2');
+}
+
 svg{
     shape-rendering: crispEdges;
     image-rendering: pixelated;
@@ -126,14 +131,39 @@ body{
     pointer-events: none;
 }
 
+.fundo-fosco{
+    background-image: url('../images/fundo-fosco2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    border: 0.01px solid rgb(71, 71, 71);
+    padding: 20px 20px;
+    border-radius: 20px;
+}
+
+.titleBody{
+    font-family: 'Montserrat-Bold';
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+}
+
 .txt1{
-    color: transparent;
+    /* color: transparent;
     background: linear-gradient(to right,#c973ff,rgb(107, 171, 255),#00eed6);
     -webkit-background-clip: text;
-    background-clip: text;
+    background-clip: text; */
+    font-family: 'Montserrat-Regular';
+    color: #fff;
     font-weight: 500;
-    font-style: italic;
-    font-size: 22px;
+    font-size: 18px;
+}
+
+.bgHighlight{
+    background-color: #fff;
+    color: #000;
+    font-family: 'Montserrat-Bold';
+    padding: 2px 5px;
 }
 
 .txt2{
@@ -167,7 +197,7 @@ body{
     box-shadow: none;
     border: none;
     border-radius: 20px;
-    padding: 10px 15px;
+    padding: 10px 30px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
