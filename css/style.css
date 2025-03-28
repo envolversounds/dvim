@@ -18,6 +18,11 @@
     src: url("../fonts/Montserrat-Italic.woff2") format('woff2');
 }
 
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url("../fonts/Montserrat-SemiBold.woff2") format('woff2');
+}
+
 svg{
     shape-rendering: crispEdges;
     image-rendering: pixelated;
@@ -122,9 +127,61 @@ body{
     100% { background-position: -100% 50%; }
 }
 
+#benefitsTitle{
+    font-family: 'Montserrat-Bold';
+    color: transparent;
+    background: linear-gradient(to right,#a143dfff,#5e56e7ff,#23c3e2ff,#23c3e2ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    /* max-width: 1000px; */
+    line-height: 1.3;
+    word-spacing: 4px;
+}
+
+#benefitsTitleNeon{
+    position: relative;
+    color: #03ffdf;
+    border-radius: 20px;
+}
+
+#benefitsTitleNeon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: inherit;
+    background-color: #00ece1ff;
+    filter: blur(40px);
+    z-index: -1;
+    border-radius: 10px;
+}
+
 .textCard{
     color: #fff;
-    max-width: 300px;
+    max-width: 370px;
+    min-width: 370px;
+    /* min-height: 250px; */
+    background: linear-gradient(to right,#220042ff,#000f35ff);
+    border-radius: 20px;
+    padding: 30px 25px;
+}
+
+.benefitsSubtitle{
+    font-family: 'Montserrat-SemiBold';
+    
+    color: transparent;
+    background: linear-gradient(to right,#8f22ffff,rgb(60, 184, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    line-height: 1.3;
+    word-spacing: 3px;
+    font-size: 25px;
+    padding-bottom: 10px;
 }
 
 #myPlayer{
@@ -164,6 +221,10 @@ body{
     color: #000;
     font-family: 'Montserrat-Bold';
     padding: 2px 5px;
+}
+
+.montserrat-bold{
+    font-family: 'Montserrat-Bold';
 }
 
 .txt2{
@@ -352,5 +413,11 @@ body{
     }
     #film::before{
         border-radius: 15px;
+    }
+}
+
+@media (max-width: 453px){
+    .textCard{
+        min-width: 20px;
     }
 }
