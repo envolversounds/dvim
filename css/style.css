@@ -434,6 +434,7 @@ body{
 
 .benefits-item{
     font-family: 'Montserrat-SemiBold';
+    white-space: nowrap;
     color: #17f8ffff;
     display: flex;
     align-items: center;
@@ -444,11 +445,71 @@ body{
     padding-left: 70px;
 }
 
+#left-controller{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate(-50%,-35%);
+}
+
+#right-controller{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(50%,-35%);
+}
+
+#left-controller-small{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 42%;
+    transform: translate(0%,-30%);
+}
+#right-controller-small{
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 42%;
+    transform: translate(0%,-30%);
+}
+
 @keyframes kwSize{
     from{
         font-size: clamp(18px, 2.5vw, 25px);
     }to{
         font-size: clamp(20px, 2.8vw, 28px);
+    }
+}
+
+@media (max-width: 1690px){
+    #benefitsSection{
+        margin-top: 50px;
+        padding-top: 30px !important;
+    }
+    #left-controller{
+        width: 28%;
+        transform: translate(-10%,-40%);
+    }
+    #right-controller{
+        width: 28%;
+        transform: translate(10%,-40%);
+    }
+}
+
+@media (max-width: 1200px){
+    #benefitsSection{
+        padding-top: 40px !important;
+    }
+    #left-controller{
+        width: 40%;
+        transform: translate(0%,-60%);
+    }
+    #right-controller{
+        width: 40%;
+        transform: translate(0%,-60%);
     }
 }
 
@@ -462,11 +523,37 @@ body{
 }
 
 @media (max-width: 767px){
+    #left-controller{
+        width: 50%;
+        transform: translate(-10%,-60%);
+    }
+    #right-controller{
+        width: 50%;
+        transform: translate(10%,-60%);
+    }
     #film{
         border-radius: 15px;
     }
     #film::before{
         border-radius: 15px;
+    }
+}
+
+@media (max-width: 596px){
+    #benefitsSection{
+        padding-top: 20px !important;
+    }
+    #left-controller{
+        display: none;
+    }
+    #right-controller{
+        display: none;
+    }
+    #left-controller-small{
+        display: block;
+    }
+    #right-controller-small{
+        display: block;
     }
 }
 
