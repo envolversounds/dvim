@@ -33,10 +33,15 @@ svg{
     image-rendering: pixelated;
 }
 
+html{
+    overflow-x: hidden !important;
+}
+
 body{
     background-color: #000000;
     font-family: 'Montserrat-Regular';
     user-select: none;
+    overflow-x: hidden !important;
 }
 
 #parallax{
@@ -614,6 +619,9 @@ body{
         width: 150px;
         right: 30px;
     }
+    #benefitsSmoke{
+        width: 140%;
+    }
 }
 
 @media (max-width: 767px){
@@ -644,7 +652,7 @@ body{
         background-clip: text;
     }
     #benefitsSmoke{
-        height: 40%;
+        height: 50%;
         transform: translate(0px,55%);
     }
 }
@@ -664,6 +672,9 @@ body{
     }
     #right-controller-small{
         display: block;
+    }
+    #examplesSection{
+        background-image: linear-gradient(to bottom,#000 80px,#00000020 70%,#0000009c);
     }
 }
 
