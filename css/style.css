@@ -632,6 +632,9 @@ body{
     #film::before{
         border-radius: 15px;
     }
+    .video{
+        border-radius: 15px;
+    }
     #left-shine{
         display: none;
     }
