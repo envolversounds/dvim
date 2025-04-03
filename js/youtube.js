@@ -68,8 +68,8 @@ film.addEventListener("click",function(){
     }
 });
 
-let cw = document.getElementById('cw1');
-let kw = document.getElementById('kw1');
+let cw = document.getElementById('cw');
+let kw = document.getElementById('kw');
 
 film.addEventListener("mouseover",function(){
     cw.style.animation = 'growFont 0.1s linear forwards';
@@ -98,24 +98,28 @@ function onPlayerStateChange(event) {
 
 /* Q&A */
 
-document.querySelectorAll(".accordion .accordion-collapse").forEach(panel => {
-    //Ajusta a cor  do botão do Accordion após o painel ser colapsado
+//Faz a cor do botão do Accordion voltar para a cor original após o painel ser colapsado
+document.querySelectorAll(".accordion .accordion-collapse").forEach(panel => {    
     panel.addEventListener('hidden.bs.collapse',function(){
         //Seleciona o respectivo botão
         const accButton = document.querySelector(`[data-bs-target="#${panel.id}"]`);
         if(accButton){
             accButton.blur();
-            accButton.style.backgroundColor = '#f8eeff';
+            accButton.style.background = "linear-gradient(to right, #3d0067ff,#000d46ff)";
+            accButton.style.boxShadow = "none";
         }
     })
 });
 
+// Força o fundo a permanecer com a cor de foco mesmo após perder o foco
 document.querySelectorAll('.accordion-button').forEach(button => {
     button.addEventListener('blur', function () {
-        this.style.backgroundColor = '#ecd1ff'; // Força o fundo roxo mesmo após perder o foco
+        this.style.setProperty("background", "linear-gradient(to right,rgb(105, 0, 176),rgb(0, 34, 186))");
+        this.style.setProperty("box-shadow", "0px 4px 10px -5px #747077", "important");
     });
 });
 
+// Fecha todos os painéis do Accordion quando você clica fora da tela
 document.addEventListener("click", function(event) {
     // Seleciona todos os painéis abertos do accordion
     let accordions = document.querySelectorAll(".accordion-collapse.show");
@@ -123,6 +127,7 @@ document.addEventListener("click", function(event) {
     accordions.forEach(function(accordion) {
         // Verifica se o clique foi fora do accordion
         if (!accordion.closest(".accordion").contains(event.target)) {
+            //Fecha o accordion
             let bsCollapse = new bootstrap.Collapse(accordion, {
                 toggle: true
             });
