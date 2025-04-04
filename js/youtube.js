@@ -48,8 +48,6 @@ film.addEventListener("click",function(){
         //Adiciona a imagem de fundo novamente
         film.style.backgroundImage = "url('images/screen.png')"
 
-    }else if(player.getPlayerState() === -1){
-        player.loadVideoById({ videoId: 'MPMcdS_Mm2M' });
     }else{ // Apertou Play (O vídeo estava pausado)
         //Remove o texto "CONTINUAR ASSISTINDO"
         var keep_watching = document.getElementsByClassName("keep-watching");
@@ -104,11 +102,6 @@ function onPlayerStateChange(event) {
             click_watch[i].style.display = "block";
         }
     }
-
-    // if (isWaitingToPlay && (event.data === 2 || event.data === 5)) {
-    //     isWaitingToPlay = false;
-    //     player.playVideo();
-    // }
 }
 
 /* Q&A */
