@@ -68,7 +68,7 @@
 
             <!-- VSL -->
             <div class="container flex-column px-0">
-                <div class="container-fluid mb-4 p-0 d-flex justify-content-center position-relative" style="position: relative; margin-top: 35px; overflow: hidden; ">
+                <div class="container-fluid mb-4 p-0 d-flex justify-content-center position-relative" style="margin-top: 35px;">
                     <!-- Film -->
                     <div class="position-absolute d-flex justify-content-center align-items-center" id="film">
                         <div class="d-flex justify-content-center align-items-center" style=" padding: 10px 20px;">
@@ -295,7 +295,34 @@
         </div>
     </div>
 
-    <script src="js/youtube.js"></script>
+
+    <div class="container">
+        <div class="video-wrapper">
+            <div class="plyr__video-embed" id="player">
+                <iframe
+                src="https://www.youtube.com/embed/l591-ALtxlg?origin=https://seusite.com&iv_load_policy=3&modestbranding=1&rel=0&playsinline=1&controls=0&enablejsapi=1"
+                allowfullscreen
+                allowtransparency
+                allow="autoplay"
+                ></iframe>
+            </div>
+        </div>
+    </div>
     
+    <br><br><br><br><br><br><br>
+
+    <script src="js/youtube.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+const player = new Plyr('#player', {
+      controls: ['play', 'progress', 'mute', 'volume', 'fullscreen'],
+      youtube: {
+        noCookie: false,
+        rel: 0,
+        showinfo: 0,
+        modestbranding: 1
+      }
+    });
+    </script>
 </body>
 </html>
