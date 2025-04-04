@@ -49,8 +49,7 @@ film.addEventListener("click",function(){
         film.style.backgroundImage = "url('images/screen.png')"
 
     }else if(player.getPlayerState() === -1){
-        player.cueVideoById({ videoId: 'MPMcdS_Mm2M' });
-        isWaitingToPlay = true;
+        player.loadVideoById({ videoId: 'MPMcdS_Mm2M' });
     }else{ // Apertou Play (O vídeo estava pausado)
         //Remove o texto "CONTINUAR ASSISTINDO"
         var keep_watching = document.getElementsByClassName("keep-watching");
