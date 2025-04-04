@@ -105,10 +105,10 @@ function onPlayerStateChange(event) {
         }
     }
 
-    if (isWaitingToPlay && (event.data === 2 || event.data === 5)) {
-        isWaitingToPlay = false;
-        player.playVideo();
-    }
+    // if (isWaitingToPlay && (event.data === 2 || event.data === 5)) {
+    //     isWaitingToPlay = false;
+    //     player.playVideo();
+    // }
 }
 
 /* Q&A */
