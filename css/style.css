@@ -157,7 +157,7 @@ body{
     aspect-ratio: 16 / 9;
     border-radius: 40px;
     overflow: visible;
-
+    pointer-events: none;
 }
 
 #film::before {
@@ -210,7 +210,7 @@ body{
 }
 
 #myPlayer{
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .btn{
