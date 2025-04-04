@@ -22,13 +22,14 @@ function onPlayerReady(event) {
     console.log("Player está pronto!");
 }
 
-// Funções para controlar o vídeo
+// Funções para controlar o vídeo através da película
 var film = document.getElementById("film");
+var myPlayer = document.getElementById("myPlayer");
 var playButton = document.getElementById("playButton");
 
+//Controla o vídeo ao tocar na película (ela não some, somente retiramos a foto de fundo e ela fica transparente)
 film.addEventListener("click",function(){
-    //Checa se o vídeo está tocando
-    if(player.getPlayerState() === 1){ // Foi Pausado
+    if(player.getPlayerState() === 1){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
         //Pausa o vídeo
         player.pauseVideo();
         //Mostra o texto "CONTINUAR ASSISTINDO"
@@ -41,7 +42,7 @@ film.addEventListener("click",function(){
         //Adiciona a imagem de fundo novamente
         film.style.backgroundImage = "url('images/screen.png')"
 
-    }else{ // Apertou Play
+    }else{ // Apertou Play/Estava Pausado
         //Remove o texto "CONTINUAR ASSISTINDO"
         var keep_watching = document.getElementsByClassName("keep-watching");
         for (var i = 0; i < keep_watching.length; i++) {
@@ -83,6 +84,7 @@ film.addEventListener("mouseout",function(){
 
 //Quando o vídeo acabar, muda a imagem do film
 function onPlayerStateChange(event) {
+    debbuger.innerHTML = player.getPlayerState();
     if (event.data === YT.PlayerState.ENDED) {
         //Mostra a imagem
         film.style.backgroundImage = "url('images/screen.png')"
