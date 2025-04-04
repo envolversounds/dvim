@@ -32,9 +32,8 @@ var myPlayer = document.getElementById("myPlayer");
 var playButton = document.getElementById("playButton");
 
 //Controla o vídeo ao tocar na película (ela não some, somente retiramos a foto de fundo e ela fica transparente)
-film.addEventListener("click",function(){
+film.addEventListener("click",function(){   
     if (!isReady) return;
-
     if(player.getPlayerState() === 1 || player.getPlayerState() === 3){ // Foi Pausado (O vídeo estava tocando) - Checa se o vídeo estava tocando para pausá-lo
         //Pausa o vídeo
         player.pauseVideo();
