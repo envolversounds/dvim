@@ -19,7 +19,11 @@ function onYouTubeIframeAPIReady() {
 
 // Função chamada quando o vídeo estiver pronto
 function onPlayerReady(event) {
-    console.log("Player está pronto!");
+    isReady = true;
+}
+
+if(isReady = true){
+    console.log('O player está pronto!');
 }
 
 // Funções para controlar o vídeo através da película
@@ -29,7 +33,9 @@ var playButton = document.getElementById("playButton");
 
 //Controla o vídeo ao tocar na película (ela não some, somente retiramos a foto de fundo e ela fica transparente)
 film.addEventListener("click",function(){
-    if(player.getPlayerState() === 1){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
+    if (!isReady) return;
+
+    if(player.getPlayerState() === 1 || player.getPlayerState() === 3){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
         //Pausa o vídeo
         player.pauseVideo();
         //Mostra o texto "CONTINUAR ASSISTINDO"
