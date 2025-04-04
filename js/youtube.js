@@ -35,7 +35,7 @@ var playButton = document.getElementById("playButton");
 film.addEventListener("click",function(){
     if (!isReady) return;
 
-    if(player.getPlayerState() === 1 || player.getPlayerState() === 3 || player.getPlayerState() === -1){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
+    if(player.getPlayerState() === 1 || player.getPlayerState() === 3){ // Foi Pausado (O vídeo estava tocando) - Checa se o vídeo estava tocando para pausá-lo
         //Pausa o vídeo
         player.pauseVideo();
         //Mostra o texto "CONTINUAR ASSISTINDO"
@@ -48,7 +48,12 @@ film.addEventListener("click",function(){
         //Adiciona a imagem de fundo novamente
         film.style.backgroundImage = "url('images/screen.png')"
 
-    }else{ // Apertou Play/Estava Pausado
+    }else if(player.getPlayerState() === -1){
+        player.cueVideoById({ videoId: 'l591-ALtxlg' });
+        setTimeout(() => {
+            player.playVideo();
+        }, 100);
+    }else{ // Apertou Play (O vídeo estava pausado)
         //Remove o texto "CONTINUAR ASSISTINDO"
         var keep_watching = document.getElementsByClassName("keep-watching");
         for (var i = 0; i < keep_watching.length; i++) {
