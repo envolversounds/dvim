@@ -35,7 +35,7 @@ var playButton = document.getElementById("playButton");
 film.addEventListener("click",function(){
     if (!isReady) return;
 
-    if(player.getPlayerState() === 1 || player.getPlayerState() === 3){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
+    if(player.getPlayerState() === 1 || player.getPlayerState() === 3 || player.getPlayerState() === -1){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
         //Pausa o vídeo
         player.pauseVideo();
         //Mostra o texto "CONTINUAR ASSISTINDO"
