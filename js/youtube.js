@@ -1,3 +1,5 @@
+/* VSL SECTION */
+
 // Carrega a API do YouTube
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -22,9 +24,9 @@ function onPlayerReady(event) {
     isReady = true;
 }
 
-if(isReady = true){
-    console.log('O player está pronto!');
-}
+// if(isReady = true){
+//     console.log('O player está pronto!');
+// }
 
 // Funções para controlar o vídeo através da película
 var film = document.getElementById("film");
@@ -32,7 +34,7 @@ var myPlayer = document.getElementById("myPlayer");
 var playButton = document.getElementById("playButton");
 
 //Controla o vídeo ao tocar na película (ela não some, somente retiramos a foto de fundo e ela fica transparente)
-film.addEventListener("click",function(){   
+film.addEventListener("click",function(){
     if (!isReady) return;
     if(player.getPlayerState() === 1 || player.getPlayerState() === 3){ // Foi Pausado (O vídeo estava tocando) - Checa se o vídeo estava tocando para pausá-lo
         //Pausa o vídeo
@@ -89,7 +91,6 @@ film.addEventListener("mouseout",function(){
 
 //Quando o vídeo acabar, muda a imagem do film
 function onPlayerStateChange(event) {
-    debbuger.innerHTML = player.getPlayerState();
     if (event.data === YT.PlayerState.ENDED) {
         //Mostra a imagem
         film.style.backgroundImage = "url('images/screen.png')"
@@ -103,7 +104,7 @@ function onPlayerStateChange(event) {
     }
 }
 
-/* Q&A */
+/* Q&A SECTION */
 
 //Faz a cor do botão do Accordion voltar para a cor original após o painel ser colapsado
 document.querySelectorAll(".accordion .accordion-collapse").forEach(panel => {    
