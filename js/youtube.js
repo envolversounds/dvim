@@ -50,9 +50,7 @@ film.addEventListener("click",function(){
 
     }else if(player.getPlayerState() === -1){
         player.cueVideoById({ videoId: 'MPMcdS_Mm2M' });
-        setTimeout(() => {
-            player.playVideo();
-        }, 100);
+        isWaitingToPlay = true;
     }else{ // Apertou Play (O vídeo estava pausado)
         //Remove o texto "CONTINUAR ASSISTINDO"
         var keep_watching = document.getElementsByClassName("keep-watching");
@@ -106,6 +104,11 @@ function onPlayerStateChange(event) {
         for (var i = 0; i < click_watch.length; i++) {
             click_watch[i].style.display = "block";
         }
+    }
+
+    if (isWaitingToPlay && (event.data === 2 || event.data === 5)) {
+        isWaitingToPlay = false;
+        player.playVideo();
     }
 }
 
