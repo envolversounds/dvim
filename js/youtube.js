@@ -89,8 +89,9 @@ film.addEventListener("mouseout",function(){
     playButton.style.animation = "shrink 0.1s linear forwards"; 
 });
 
-//Quando o vídeo acabar, muda a imagem do film
+
 function onPlayerStateChange(event) {
+    //Quando o vídeo acabar, muda a imagem do film
     if (event.data === YT.PlayerState.ENDED) {
         //Mostra a imagem
         film.style.backgroundImage = "url('images/screen.png')"
@@ -101,6 +102,59 @@ function onPlayerStateChange(event) {
         for (var i = 0; i < click_watch.length; i++) {
             click_watch[i].style.display = "block";
         }
+    }
+
+    // Lógica para telas pequenas
+    if (event.data === YT.PlayerState.PLAYING && isSmallScreen) { // Usuário deu play ou despausou o vídeo
+        /* FAZ SUMIR TODOS OS ELEMENTOS VISÍVEIS */
+        //Remove o texto "CONTINUAR ASSISTINDO"
+        var keep_watching = document.getElementsByClassName("keep-watching");
+        for (var i = 0; i < keep_watching.length; i++) {
+            keep_watching[i].style.display = "none";
+        }
+
+        // Remove o texto "CLIQUE PARA ASSISTIR" se estiver visível
+        var keep_watching = document.querySelectorAll(".click-watch");
+        keep_watching.forEach(function(element) {
+            if(window.getComputedStyle(element).display == "block"){
+                element.style.display = "none";
+            }
+        });
+        
+        //Remove o botão play
+        playButton.style.display = "none";
+        //Remove a imagem de fundo
+        film.style.backgroundImage = "none";
+        //Torna a película invisível
+        film.style.backgroundColor = "#00000000";
+    }else if(event.data === YT.PlayerState.PAUSED && isSmallScreen){ //Usuário pausou o vídeo
+        // Mostra o texto "CONTINUAR ASSISTINDO"
+        var keep_watching = document.getElementsByClassName("keep-watching");
+        for (var i = 0; i < keep_watching.length; i++) {
+            keep_watching[i].style.display = "block";
+        }
+        //Mostra o botão play
+        playButton.style.display = "block";
+        //Adiciona a imagem de fundo novamente
+        film.style.backgroundImage = "url('images/screen.png')"
+    }
+}
+
+let isSmallScreen = false;
+// Lógica para telas pequenas
+const mediaQuery = window.matchMedia("(max-width: 768px)");
+// Verifica no carregamento
+handleScreenChange(mediaQuery);
+// Escuta mudanças de tamanho
+mediaQuery.addEventListener("change", handleScreenChange);
+// Função para verificar o tamanho da tela
+function handleScreenChange(e) {
+    if(e.matches) { // A tela tem 768px ou menos
+        isSmallScreen = e.matches;
+        // myPlayer pointer-events: auto;
+        myPlayer.style.setProperty("pointer-events", "auto", "important");
+        // film pointer-events: none;
+        film.style.setProperty("pointer-events", "none", "important");
     }
 }
 
