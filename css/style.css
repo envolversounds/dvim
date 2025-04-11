@@ -524,6 +524,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 60px 0px !important;
 }
 
 #cardGarantia{
