@@ -140,6 +140,7 @@ function onPlayerStateChange(event) {
     }
 }
 
+/* MUDANÇA DE TAMANHO */
 let isSmallScreen = false;
 // Lógica para telas pequenas
 const mediaQuery = window.matchMedia("(max-width: 768px)");
@@ -150,11 +151,19 @@ mediaQuery.addEventListener("change", handleScreenChange);
 // Função para verificar o tamanho da tela
 function handleScreenChange(e) {
     if(e.matches) { // A tela tem 768px ou menos
+        // Torna a flag verdadeira
         isSmallScreen = e.matches;
         // myPlayer pointer-events: auto;
         myPlayer.style.setProperty("pointer-events", "auto", "important");
         // film pointer-events: none;
         film.style.setProperty("pointer-events", "none", "important");
+    }else{
+        //Quando a tela ficar pequena ele modifica a flag para falso
+        isSmallScreen = false;
+        // myPlayer pointer-events: auto;
+        myPlayer.style.setProperty("pointer-events", "none", "important");
+        // film pointer-events: none;
+        film.style.setProperty("pointer-events", "auto", "important");
     }
 }
 

@@ -102,8 +102,17 @@ body{
     padding: 0px 10px;
 }
 
-.nav-link{
-    color: #fff;
+.nav-link:link{
+    color: #dcdcdc !important;
+}
+.nav-link:visited{
+    color: #dcdcdc !important;
+}
+.nav-link:hover{
+    color: #fff !important;
+}
+.nav-link:active{
+    color: #fff !important;
 }
 
 #navBtn{
@@ -341,12 +350,12 @@ body{
 
 /* SECTION BENEFITS */
 
-#benefitsSection{
+#beneficios-do-dvim{
     position: relative;
     background-image: linear-gradient(to bottom,#000000bc,#1000416b,#1a0028ff 90%,#000);
 }
 
-#benefitsSection::before{
+#beneficios-do-dvim::before{
     content: "";
     position: absolute;
     background-image: url('../images/benefits-bg-2.png');
@@ -445,11 +454,11 @@ body{
 
 /* SECTION EXAMPLES */
 
-#examplesSection{
+#exemplos-de-musicas{
     position: relative;
     background-image: linear-gradient(to bottom,#000 120px,#00000020 80%,#0000009c),linear-gradient(to right,#000,#00000000,#000000);
 }
-#examplesSection::before{
+#exemplos-de-musicas::before{
     content: "";
     position: absolute;
     background-image: url('../images/tela-de-linho.png');
@@ -508,6 +517,53 @@ body{
     }
 }
 
+/* GARANTIA */
+
+#garantia{
+    background-image: url('../images/fundo-tela-garantia.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#cardGarantia{
+    position: relative;
+    background-image: url('../images/fundo-card-garantia.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-width: 900px;
+    border-radius: 50px;
+}
+
+#txtGarantia{
+    font-family: 'Montserrat-SemiBold';
+    color: transparent;
+    background: linear-gradient(to right,#ce1eff, #28e6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    font-size: 19px;
+    padding: 30px 0px;
+    /* Faz o gradiente encaixar exatamente no texto */
+    background-size: 100% auto;
+    background-position: center;
+}
+
+#efeitoEsquerdoGarantia{
+    position: absolute;
+    width: 80px;
+    top: 15%;
+    left: 5%;
+}
+
+#efeitoDireitoGarantia{
+    position: absolute;
+    width: 80px;
+    top: 15%;
+    right: 5%;
+}
+
 /* Q&A */
 
 #qaTitle{
@@ -553,7 +609,7 @@ body{
 }
 
 @media (max-width: 1690px){
-    #benefitsSection{
+    #beneficios-do-dvim{
         margin-top: 50px;
         padding-top: 30px !important;
     }
@@ -575,7 +631,7 @@ body{
 }
 
 @media (max-width: 1200px){
-    #benefitsSection{
+    #beneficios-do-dvim{
         padding-top: 40px !important;
     }
     #left-controller{
@@ -654,7 +710,7 @@ body{
 }
 
 @media (max-width: 596px){
-    #benefitsSection{
+    #beneficios-do-dvim{
         padding-top: 20px !important;
     }
     #left-controller{
@@ -669,7 +725,7 @@ body{
     #right-controller-small{
         display: block;
     }
-    #examplesSection{
+    #exemplos-de-musicas{
         background-image: linear-gradient(to bottom,#000 80px,#00000020 70%,#0000009c);
     }
 }
