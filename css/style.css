@@ -572,7 +572,14 @@ body{
     right: 5%;
 }
 
+
 /* BÔNUS */
+
+#bonus{
+    background-image: url("../images/background-oferta.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 #bonusTitle{
     position: relative;
@@ -693,6 +700,27 @@ body{
 
 .accordion-body{
     color: #2c005e;
+}
+
+/* FOOTER */
+
+#footer{
+    font-family: 'Montserrat-Light';
+    color: transparent;
+    background: linear-gradient(to right,#f71aff, #28e6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 20px;
+    /* Faz o gradiente encaixar exatamente no texto */
+    background-size: 100% auto;
+    background-position: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}
+
+#company-name{
+    
 }
 
 @media (max-width: 1690px){
