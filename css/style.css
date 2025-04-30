@@ -538,16 +538,9 @@ body{
 }
 
 #titleGarantia{
-    color: transparent;
-    background: linear-gradient(to right,#9e9e9e -50%, #ffffff);
-    -webkit-background-clip: text;
-    background-clip: text;
+    color: #fff;
     text-align: center;
     font-size: 19px;
-    
-    /* Faz o gradiente encaixar exatamente no texto */
-    background-size: 100% auto;
-    background-position: center;
 }
 
 #txtGarantia{
@@ -591,6 +584,7 @@ body{
     background-clip: text;
     text-align: center;
     line-height: 1.3;
+    font-size: 40px;
     word-spacing: 4px;
     /* Faz o gradiente encaixar exatamente no texto */
     background-size: 100% auto;
@@ -599,6 +593,63 @@ body{
 }
 
 /* ACORDO */
+
+#comprar{
+    background-image: url("../images/background-acordo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#acordoTitle{
+    position: relative;
+    font-family: 'Montserrat-SemiBold';
+    margin: 0px 0px;
+    color: transparent;
+    background: linear-gradient(to right,#ec00d4ff, #f01bffff, rgb(0, 255, 242) 40%, rgb(9, 196, 206) 90%);
+    max-width: 700px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    line-height: 1.3;
+    font-size: 40px;
+    word-spacing: 4px;
+    /* Faz o gradiente encaixar exatamente no texto */
+    background-size: 100% auto;
+    background-position: center;
+    display: inline-block; /* Ajusta a largura do elemento ao tamanho do texto, evitando espaços extras. */
+}
+
+#listaMateriais{
+    position: relative;
+    border-radius: 30px;
+    padding: 10px 20px;
+    background-color: #ce0000; /* fundo do conteúdo */
+    color: white;
+    z-index: 1;
+    overflow: hidden;
+}
+  
+#listaMateriais::before{
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(to right, #ff00cc, #3333ff);
+    z-index: -1;
+    border-radius: 12px;
+}
+
+#txtAcordo{
+    font-family: 'Montserrat-Regular'; 
+    margin-top: -35px;
+    color: #fff;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
 
 /* Q&A */
 
@@ -742,6 +793,9 @@ body{
     #benefitsSmoke{
         height: 50%;
         transform: translate(0px,55%);
+    }
+    #txtAcordo{
+        margin-top: 0px;
     }
 }
 
