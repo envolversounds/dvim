@@ -704,7 +704,7 @@ body{
 
 /* FOOTER */
 
-#footer{
+#companyName{
     font-family: 'Montserrat-Light';
     color: transparent;
     background: linear-gradient(to right,#f71aff, #28e6ff);
@@ -716,11 +716,22 @@ body{
     background-position: center;
     padding-left: 0px;
     padding-right: 0px;
-    
 }
 
-#company-name{
+#txtFooter{
+    font-family: 'Montserrat-Regular';
+    color: transparent;
+    background: linear-gradient(to right,#f71aff, #28e6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
     
+    margin: 0px 0px;
+    max-width: 500px;
+    /* Faz o gradiente encaixar exatamente no texto */
+    background-size: 100% auto;
+    background-position: center;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 @media (max-width: 1690px){
