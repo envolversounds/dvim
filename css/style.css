@@ -243,6 +243,10 @@ body{
 
 /* HISTORY SECTION */
 
+#history-section{
+    background: linear-gradient(to right, #00000080,#00000017,#00000080),linear-gradient(to bottom, #000,rgb(19, 0, 32));
+}
+
 .txt1{
     font-family: 'Montserrat-Regular';
     color: #fff;
@@ -883,5 +887,11 @@ body{
         background: linear-gradient(to bottom right,#ce1eff 14%, #28e6ff 80%);
         -webkit-background-clip: text;
         background-clip: text;
+    }
+}
+
+@media (max-width: 382px){
+    .benefits-item{
+        font-size: 13px;
     }
 }

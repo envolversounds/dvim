@@ -175,17 +175,17 @@ const myCarousel = document.querySelector('#carouselExampleIndicators');
 const slideLoadedFlags = [];
 
 myCarousel.addEventListener('slid.bs.carousel', function () {
-  const items = myCarousel.querySelectorAll('.carousel-item');
-  items.forEach((item, index) => {
-    if (item.classList.contains('active') && !slideLoadedFlags[index]) {
-      const iframe = item.querySelector('iframe');
-      if (iframe) {
-        const src = iframe.src;
-        iframe.src = src; // Recarrega apenas uma vez
-        slideLoadedFlags[index] = true; // Marca como carregado
-      }
-    }
-  });
+    const items = myCarousel.querySelectorAll('.carousel-item');
+    items.forEach((item, index) => {
+        if (item.classList.contains('active') && !slideLoadedFlags[index]) {
+            const iframe = item.querySelector('iframe');
+            if (iframe) {
+                const src = iframe.src;
+                iframe.src = src; // Recarrega apenas uma vez
+                slideLoadedFlags[index] = true; // Marca como carregado
+            }
+        }
+    });
 });
 
 /* Q&A SECTION */
