@@ -167,6 +167,20 @@ function handleScreenChange(e) {
     }
 }
 
+/* EXAMPLES SECTION */
+
+const myCarousel = document.querySelector('#carouselExampleIndicators');
+
+myCarousel.addEventListener('slid.bs.carousel', function () {
+    const activeSlide = myCarousel.querySelector('.carousel-item.active');
+    const iframe = activeSlide.querySelector('iframe');
+    
+    if (iframe) {
+      const src = iframe.src;
+      iframe.src = src; // Recarrega o iframe
+    }
+});
+
 /* Q&A SECTION */
 
 //Faz a cor do botão do Accordion voltar para a cor original após o painel ser colapsado
