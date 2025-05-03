@@ -171,14 +171,21 @@ function handleScreenChange(e) {
 
 const myCarousel = document.querySelector('#carouselExampleIndicators');
 
+// Flags para marcar se o slide já foi carregado
+const slideLoadedFlags = [];
+
 myCarousel.addEventListener('slid.bs.carousel', function () {
-    const activeSlide = myCarousel.querySelector('.carousel-item.active');
-    const iframe = activeSlide.querySelector('iframe');
-    
-    if (iframe) {
-      const src = iframe.src;
-      iframe.src = src; // Recarrega o iframe
+  const items = myCarousel.querySelectorAll('.carousel-item');
+  items.forEach((item, index) => {
+    if (item.classList.contains('active') && !slideLoadedFlags[index]) {
+      const iframe = item.querySelector('iframe');
+      if (iframe) {
+        const src = iframe.src;
+        iframe.src = src; // Recarrega apenas uma vez
+        slideLoadedFlags[index] = true; // Marca como carregado
+      }
     }
+  });
 });
 
 /* Q&A SECTION */
