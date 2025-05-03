@@ -459,7 +459,12 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 40px 70px;
+    margin: 40px 50px;
+}
+.title-carousel-item{    
+    font-family: 'Montserrat-Light';
+    font-size: 19px;
+    color: #ffffff;
 }
 
 #exemplos-de-musicas{
