@@ -454,6 +454,14 @@ body{
 
 /* SECTION EXAMPLES */
 
+.item-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px 70px;
+}
+
 #exemplos-de-musicas{
     position: relative;
     background-image: linear-gradient(to bottom,#000 120px,#00000020 80%,#0000009c),linear-gradient(to right,#000,#00000000,#000000);
