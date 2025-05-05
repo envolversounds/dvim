@@ -84,15 +84,20 @@ film.addEventListener("mouseout",function(){
     playButton.style.animation = "shrink 0.1s linear forwards"; 
 });
 
+let tentouCarregar = false;
+
 //Checa mudanças de estado do vídeo
 function onPlayerStateChange(event) {
     // debbuger.innerHTML = player.getPlayerState();
-
+    //MARCA A FLAG COMO VERDADEIRA QUANDO O USUÁRIO TENTOU CARREGAR O VÍDEO
+    if(event.data === 3){
+        tentouCarregar = true;
+    }
     //CHECA SE O VÍDEO NÃO FOI INICIADO
-    if(player.data === -1){
+    if(event.data === -1 && tentouCarregar){
         debbuger.innerHTML = '⚠️ Houve algum erro ao tentar carregar o vídeo, por favor, troque de navegador ou cheque a sua conexão com a internet! ⚠️';
     }
-
+    
     //QUANDO O VÍDEO ACABAR, MUDA A IMAGEM DO FILM
     if (event.data === YT.PlayerState.ENDED) {
         //Mostra a imagem
