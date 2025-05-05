@@ -647,12 +647,13 @@ body{
     position: relative;
     border-radius: 30px;
     padding: 10px 20px;
-    background-color: #ce0000; /* fundo do conteúdo */
     color: white;
     z-index: 1;
     overflow: hidden;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
 }
-  
+
 #listaMateriais::before{
     content: "";
     position: absolute;
@@ -663,6 +664,18 @@ body{
     background: linear-gradient(to right, #ff00cc, #3333ff);
     z-index: -1;
     border-radius: 12px;
+}
+
+#listaMateriais:hover{
+    font-family: 'Montserrat-SemiBold';
+    font-size: 17px;
+}
+
+#btnAdquirir{
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    border: none;
 }
 
 #txtAcordo{
@@ -720,6 +733,22 @@ body{
 }
 
 /* FOOTER */
+#background-footer{
+    background-image: linear-gradient(to bottom, #00000042,rgba(255, 0, 0, 0) 50%);
+    background-color: #180340ff;
+}
+
+#col-1-footer{
+    background: linear-gradient(to bottom, #00000042,rgba(255, 0, 0, 0) 50%),linear-gradient(to right, #180340ff,#060c71ff,#1c034cff);
+}
+
+#col-2-footer{
+    background: linear-gradient(to bottom, #00000042,rgba(255, 0, 0, 0) 50%),linear-gradient(to right, #1c034cff,#140337ff,#1c034cff);
+}
+
+#col-3-footer{
+    background: linear-gradient(to bottom, #00000042,rgba(255, 0, 0, 0) 50%),linear-gradient(to right, #1c034cff,#060c71ff,#180340ff);
+}
 
 #companyName{
     font-family: 'Montserrat-Light';
@@ -741,9 +770,9 @@ body{
     background: linear-gradient(to right,#f71aff, #28e6ff);
     -webkit-background-clip: text;
     background-clip: text;
-    
-    margin: 0px 0px;
     max-width: 500px;
+    font-size: 16px;
+    margin: 0px 0px;
     /* Faz o gradiente encaixar exatamente no texto */
     background-size: 100% auto;
     background-position: center;
@@ -814,6 +843,26 @@ body{
     #benefitsSmoke{
         width: 140%;
     }
+    #company-name{
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+    #txtFooter{
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+    #col-1-footer{
+        background: none;
+    }
+    
+    #col-2-footer{
+        background: none;
+    }
+    
+    #col-3-footer{
+        background: none;
+    }
+    
 }
 
 @media (max-width: 767px){
