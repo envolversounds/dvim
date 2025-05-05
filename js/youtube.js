@@ -86,11 +86,12 @@ film.addEventListener("mouseout",function(){
 
 //Checa mudanças de estado do vídeo
 function onPlayerStateChange(event) {
-    debbuger.innerHTML = player.getPlayerState();
+    // debbuger.innerHTML = player.getPlayerState();
+
     //CHECA SE O VÍDEO NÃO FOI INICIADO
-    // if(event.data === YT.PlayerState.CUED){
-    //     debbuger.innerHTML = '⚠️ Houve um erro ao tentar carregar o vídeo, por favor, troque de navegador ou cheque a sua conexão com a internet! ⚠️';
-    // }
+    if(player.data === -1){
+        debbuger.innerHTML = '⚠️ Houve algum erro ao tentar carregar o vídeo, por favor, troque de navegador ou cheque a sua conexão com a internet! ⚠️';
+    }
 
     //QUANDO O VÍDEO ACABAR, MUDA A IMAGEM DO FILM
     if (event.data === YT.PlayerState.ENDED) {
