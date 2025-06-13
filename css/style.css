@@ -230,7 +230,7 @@ body{
 }
 
 #playButton{
-    width: 50px;
+    width: 45px;
 }
 
 .video{
@@ -342,9 +342,9 @@ body{
 
 @keyframes grow{
     from{
-        width: 50px;
+        width: 45px;
     }to{
-        width: 60px;
+        width: 55px;
     }
 }
 
