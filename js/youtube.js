@@ -92,15 +92,12 @@ function onPlayerStateChange(event) {
 
     //QUANDO O VÍDEO FOR PAUSADO
     if (event.data === YT.PlayerState.PAUSED) {
-        //Mostra o texto "CONTINUAR ASSISTINDO"
-        var keep_watching = document.getElementsByClassName("keep-watching");
-        for (var i = 0; i < keep_watching.length; i++) {
-            keep_watching[i].style.display = "block";
-        }
         //Mostra o botão play
         playButton.style.display = "block";
         //Adiciona a imagem de fundo novamente
         film.style.backgroundImage = "url('images/screen.png')"
+        //Adiciona animação no botão play
+        playButton.style.animation = "grow 2s infinite alternate";
     }
 
     //QUANDO O VÍDEO ACABAR, MUDA A IMAGEM DO FILM
