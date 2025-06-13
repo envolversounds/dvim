@@ -30,21 +30,43 @@ var myPlayer = document.getElementById("myPlayer");
 var playButton = document.getElementById("playButton");
 
 //Controla o vídeo ao tocar na película (ela não some, somente retiramos a foto de fundo e ela fica transparente)
-film.addEventListener("click",function(){
-    if(player.getPlayerState() === 1){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
-        //Pausa o vídeo
-        player.pauseVideo();
-        //Mostra o texto "CONTINUAR ASSISTINDO"
-        var keep_watching = document.getElementsByClassName("keep-watching");
-        for (var i = 0; i < keep_watching.length; i++) {
-            keep_watching[i].style.display = "block";
-        }
-        //Mostra o botão play
-        playButton.style.display = "block";
-        //Adiciona a imagem de fundo novamente
-        film.style.backgroundImage = "url('images/screen.png')"
+// film.addEventListener("click",function(){
+//     if(player.getPlayerState() === 1){ // Foi Pausado/Estava Tocando - Checa se o vídeo estava tocando para pausá-lo
+//         //Pausa o vídeo
+//         player.pauseVideo();
+//         //Mostra o texto "CONTINUAR ASSISTINDO"
+//         var keep_watching = document.getElementsByClassName("keep-watching");
+//         for (var i = 0; i < keep_watching.length; i++) {
+//             keep_watching[i].style.display = "block";
+//         }
+//         //Mostra o botão play
+//         playButton.style.display = "block";
+//         //Adiciona a imagem de fundo novamente
+//         film.style.backgroundImage = "url('images/screen.png')"
 
-    }else{ // Apertou Play/Estava Pausado
+//     }
+
+let cw = document.getElementById('cw');
+let kw = document.getElementById('kw');
+
+film.addEventListener("mouseover",function(){
+    cw.style.animation = 'growFont 0.1s linear forwards';
+    playButton.style.animation = "grow 0.1s linear forwards";
+});
+
+film.addEventListener("mouseout",function(){
+    cw.style.animation = 'shrinkFont 0.1s linear forwards';
+    playButton.style.animation = "shrink 0.1s linear forwards"; 
+});
+
+let tentouCarregar = false;
+
+//Checa mudanças de estado do vídeo
+function onPlayerStateChange(event) {
+    // debbuger.innerHTML = player.getPlayerState();
+    
+    //QUANDO O VÍDEO INICIAR
+    if (event.data === YT.PlayerState.BUFFERING) {
         //Remove o texto "CONTINUAR ASSISTINDO"
         var keep_watching = document.getElementsByClassName("keep-watching");
         for (var i = 0; i < keep_watching.length; i++) {
@@ -66,38 +88,21 @@ film.addEventListener("click",function(){
         film.style.backgroundImage = "none";
         //Torna a película invisível
         film.style.backgroundColor = "#00000000";
-        //Toca o vídeo
-        player.playVideo();
     }
-});
 
-let cw = document.getElementById('cw');
-let kw = document.getElementById('kw');
-
-film.addEventListener("mouseover",function(){
-    cw.style.animation = 'growFont 0.1s linear forwards';
-    playButton.style.animation = "grow 0.1s linear forwards";
-});
-
-film.addEventListener("mouseout",function(){
-    cw.style.animation = 'shrinkFont 0.1s linear forwards';
-    playButton.style.animation = "shrink 0.1s linear forwards"; 
-});
-
-let tentouCarregar = false;
-
-//Checa mudanças de estado do vídeo
-function onPlayerStateChange(event) {
-    // debbuger.innerHTML = player.getPlayerState();
-    //MARCA A FLAG COMO VERDADEIRA QUANDO O USUÁRIO TENTOU CARREGAR O VÍDEO
-    if(event.data === 3){
-        tentouCarregar = true;
+    //QUANDO O VÍDEO FOR PAUSADO
+    if (event.data === YT.PlayerState.PAUSED) {
+        //Mostra o texto "CONTINUAR ASSISTINDO"
+        var keep_watching = document.getElementsByClassName("keep-watching");
+        for (var i = 0; i < keep_watching.length; i++) {
+            keep_watching[i].style.display = "block";
+        }
+        //Mostra o botão play
+        playButton.style.display = "block";
+        //Adiciona a imagem de fundo novamente
+        film.style.backgroundImage = "url('images/screen.png')"
     }
-    //CHECA SE O VÍDEO NÃO FOI INICIADO
-    if(event.data === -1 && tentouCarregar){
-        debbuger.innerHTML = '⚠️ Houve algum erro ao tentar carregar o vídeo, por favor, troque de navegador ou cheque a sua conexão com a internet! ⚠️';
-    }
-    
+
     //QUANDO O VÍDEO ACABAR, MUDA A IMAGEM DO FILM
     if (event.data === YT.PlayerState.ENDED) {
         //Mostra a imagem
